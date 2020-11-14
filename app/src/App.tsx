@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 // ComponentのImport
 import Home from './components/home/Home'
 
 import './App.css';
 import TimeLine from "./components/home/timeLine";
+import Requirement from "./components/requirement/Requirement";
 
 function App() {
     const AppName = 'MeatMeet？'
@@ -14,18 +16,20 @@ function App() {
 
     useEffect(() => {
         console.log('hello hooks')
-    },[count])
+    }, [count])
 
     return (
         <>
             <div className="App">
-                <header className="App-header">
-                    <h2>{AppName}</h2>
-                    <button onClick={() => setCount(count + 1)}>increment</button>
-                    <p>{count}</p>
-                </header>
-                <Home></Home>
-                <TimeLine/>
+                <Router>
+                    <header className="App-header">
+                        <h2>{AppName}</h2>
+                        <Link to="/" >Home</Link>
+                        <Link to="/requirement" >募集</Link>
+                    </header>
+                    <Route exact path="/" component={Home}/>
+                      <Route exact path="/requirement" component={Requirement}/>
+                </Router>
             </div>
         </>
     );
