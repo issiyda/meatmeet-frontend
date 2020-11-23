@@ -11,4 +11,4 @@ services:
       - ./:/meatmeet/frontend
     tty: true
     restart: always
-    command: sh -c "cd app && yarn start"
+    command: sh -c "cd app && yarn install && yarn start"
