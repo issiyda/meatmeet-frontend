@@ -1,0 +1,79 @@
+//セレクトボックス
+// cp_ipselect cp_sl01
+.cp_ipselect {
+  overflow: hidden;
+  width: 70%;
+  margin-bottom: 2%;
+  text-align: left;
+
+  @include mq() {
+    width: 90%;
+}
+}
+
+select {
+  width: 100%;
+  height:$height_3l;
+  padding-right: 1em;
+  padding-left: 10px;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: $font-size_default;
+
+  &:focus {
+    border: 1px solid dodgerBlue;
+    outline: none;
+    box-shadow: 0 0 5px 1px dodgerBlue;
+}
+
+  @include mq() {
+    font-size: $font-size_m;
+}
+}
+
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+
+.cp_ipselect.cp_sl01 {
+  position: relative;
+  border: 1px solid #bbbbbb;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.cp_ipselect.cp_sl01::before {
+  position: absolute;
+  top: 1.1em;
+  right: 0.9em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #666666;
+  pointer-events: none;
+
+  @include mq() {
+    top: 0.8em;
+}
+}
+
+.cp_ipselect.cp_sl01 select {
+  padding: 8px 38px 8px 8px;
+  height: 40px;
+
+    @include mq(){
+        padding: 3px 38px 3px 8px;
+        height: 30px;
+    }
+}

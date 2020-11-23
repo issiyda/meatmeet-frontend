@@ -1,0 +1,28 @@
+.requirementDetail{
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    width: 50%;
+  }
+
+  &__items{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    &__label{
+    text-align: left;
+      width:30%;
+  }
+    &__content{
+      text-align: left;
+      width:70%;
+    }
+  }
+
+  &__info{
+    width:70%;
+  }
+}

@@ -1,0 +1,178 @@
+
+// ==============================
+// 変数
+// ==============================
+$color_default: black;
+$color_base: #FFD900;
+$color_main: #6002E9;
+$color_accent: #03009F;
+$color_sub: #B3B3B3;
+$color_bg:  #FFF3AD;
+$color_sub-bg:#FFFCEC;
+$color_w: #fff;
+$color_twitter: #1da1f2;
+$color_attention: #e3342f;
+$color_gray: rgba(255, 255, 255, 0.8);
+$color_border: #707070;
+$color_inputBorder: #bbbbbb;
+$color_orange: #F7931E;
+$color_errorBorder: #c20c33;
+$color_errorBackground: #ffd9e1;
+$color_opponent: #f9f9f9;
+$color_textBack: ghostwhite;
+
+
+$site-width: 980px;
+
+$font-size_ss: 10px;
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_default: 16px;
+$font-size_l: 18px;
+$font-size_xl: 24px;
+$font-size_xxl: 30px;
+$font-size_2l: 36px;
+$font-size_3l: 54px;
+
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+
+$height_s: 5px;
+$height_m: 10px;
+$height_l: 15px;
+$height_xl: 20px;
+$height_xxl: 30px;
+$height_3l: 40px;
+$height_4l: 50px;
+
+$header-height:100px;
+
+$font-family_corp: 'Amatic SC', cursive;
+
+//レビュー ★
+$starFull: 16px;//星1個の幅
+$starHalf: $starFull / 2;//星半分（0.5）の幅
+
+$rate1: $starFull;//星1
+$rate1-5: $starFull + $starHalf;//星1.5
+$rate2: $starFull * 2;//星2
+$rate2-5: ($starFull * 2) + $starHalf;//星2.5
+$rate3: $starFull * 3;//星3
+$rate3-5: ($starFull * 3) + $starHalf;//星3.5
+$rate4: $starFull * 4;//星4
+$rate4-5: ($starFull * 4) + $starHalf;//星4.5
+$rate5 :$starFull * 5;//星5
+
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+// ==============================
+// mixin
+// ==============================
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// ==================================
+// base
+// ==================================
+html, body {
+  width: 100%;
+  color: $color_default;
+  font-size: $font-size_default;
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
+  text-size-adjust: 100%;
+  letter-spacing: 0.1em;
+}
+
+main{
+  width:100% ;
+  margin: 0 auto;
+}
+
+.main{
+  width:95%;
+  margin:0 auto 10% ;
+}
+
+a{
+    color:$color_default;
+    font-weight:bold;
+    text-decoration:none;
+
+}
+
+
+
+// ==============================
+// h3
+// ==============================
+.f-h3{
+
+}
+
+// ==============================
+// h3のアンダーバー
+// ==============================
+.f-h3:after{
+  content: "";
+  display: block;
+  height: 4px;
+
+
+}
+
+
+// ==============================
+// h4
+// ==============================
+.f-h4{
+
+}
+
+// ==============================
+// エラー時の表示
+// ==============================
+.error{
+        color:$color_attention;
+        font-weight:bolder;
+        font-size:$font-size_l;
+        padding:5%;
+        text-align:center;
+
+    @include mq{
+        width:60%;
+        margin:0 auto;
+    }
+}
+
+// ==============================
+// 複数アイテム最後のmargin
+// ==============================
+.last{
+    margin-bottom:10% !important;
+}
+
+// ==============================
+// スマホのinputフォーム変更
+// ==============================
+input[type="button"],input[type="text"],input[type="password"],input[type="email"],input[type="image"],input[type="number"],textarea{
+    -webkit-appearance: none;
+}
+input[type="submit"]{
+    -webkit-appearance: none;
+}
+
+

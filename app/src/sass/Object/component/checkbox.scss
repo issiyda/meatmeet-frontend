@@ -1,0 +1,30 @@
+.c-check[type="checkbox"]{
+    width: 15px;
+    height:15px;
+    -ms-transform: scale(1.5, 1.5);
+    -webkit-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+}
+
+.c-check__treaty{
+    width: 14px !important;
+    height:14px !important;
+}
+
+.c-checkbox__label {
+    margin: 3px;
+    padding: 5px 10px;
+    border: 2px solid #FFD90066;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    color: #333333;
+}
+
+.c-checkbox[type="checkbox"] {
+    display: none;
+}
+
+.c-checkbox[type="checkbox"]:checked + .c-checkbox__label {
+    background: #FFD90066;
+}

@@ -1,0 +1,30 @@
+.c-input{
+    border: 1px solid $color_inputBorder;
+    font-size: $font-size_l;
+    height:$height_3l;
+    padding-left:$space_m;
+    text-align: left;
+    border-radius: 3px;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+
+    &:focus {
+        border: 1px solid dodgerBlue;
+        outline: none;
+        box-shadow: 0 0 5px 1px dodgerBlue;
+    }
+}
+
+.c-inputSearch{
+    border-radius:20px;
+    background: $color_accent;
+    border:none;
+    box-sizing: border-box;
+    color:$color_w;
+    outline: none;
+    width:100%;
+
+}  ::placeholder{
+    color: #9281FF
+}

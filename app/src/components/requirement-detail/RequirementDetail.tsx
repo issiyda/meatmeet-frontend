@@ -4,45 +4,58 @@ import EventIcon from '@material-ui/icons/Event';
 import TextField from '@material-ui/core/TextField';
 
 import {
-    Route,
-    Switch,
-    useParams,
-    useHistory,
-    useLocation,
+  Route,
+  Switch,
+  useParams,
+  useHistory,
+  useLocation,
 } from 'react-router-dom';
-import {RequirementContext} from "../../App";
+import {requirementState} from '../../interface'
 
+import {Store} from "../../Store";
+
+
+import '../../sass/Object/project/requirementDetail.scss'
 
 function RequirementDetail(this: any) {
 
 
-    const urlParam:any = useParams();
-    const requirementId = urlParam.id
+  const urlParam: any = useParams();
+  const {state, dispatch} = useContext(Store)
+  const requirementInfo: requirementState = state.requirementInfo[urlParam.id - 1]
 
-    const requirements = useContext(RequirementContext)
-    const requirementDetailInfo = requirements[requirementId-1]
+  useEffect(() => {
+    console.log(requirementInfo)
+  })
 
-    return (
-        <>
-                    <div className="requirementDetail">
-                        <div className="requirementDetail__timeline">
-                            TimeLine
-                        </div>
-                        <div>
-                            <div className="requirementDetail__detail">
-                                募集詳細:
-                                ID：　{requirementId}
-                                タイトル：　{requirementDetailInfo.title}
-                                募集者：　{requirementDetailInfo.name}
-                                場所：　{requirementDetailInfo.place}
-                            </div>
-                            <div className="requirementDetail__talk">
-                                やりとり
-                            </div>
-                        </div>
-                    </div>
-        </>
-    );
+  return (
+    <>
+      <div className="requirementDetail">
+        <h2 className="requirementDetail__timeline">
+          募集詳細
+        </h2>
+        <div className="requirementDetail__main">
+          <div className="requirementDetail__detail">
+            <div className="requirementDetail__items">
+              <div className="requirementDetail__items__label">タイトル：</div>
+              <div className="requirementDetail__items__content">{requirementInfo.title}</div>
+            </div>
+            <div className="requirementDetail__items">
+              <div className="requirementDetail__items__label">募集者：</div>
+              <div className="requirementDetail__items__content">{requirementInfo.name}</div>
+            </div>
+            <div className="requirementDetail__items">
+              <div className="requirementDetail__items__label">場所；</div>
+              <div className="requirementDetail__items__content">{requirementInfo.place}</div>
+            </div>
+          </div>
+          <div className="requirementDetail__talk">
+            やりとり
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default RequirementDetail;

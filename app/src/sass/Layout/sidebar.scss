@@ -1,0 +1,225 @@
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+mat-drawer{
+  height: 100vh;
+  position: fixed !important;
+  width:280px;
+}
+
+mat-drawer-container {
+  min-height: 100vh;
+}
+
+.mat-drawer-side {
+  border: none !important;
+}
+
+.toggleButton {
+  background: $color_accent;
+  border-radius: 3px 0 0 3px;
+  color: $color_w;
+  padding: 6px;
+
+  &__container{
+    display: block;
+    padding-top:15px;
+    position: fixed;
+
+  }
+
+  &__inner{
+    position: absolute;
+    right: 0;
+  }
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #7000FF 0%, #000B69 100%);
+  height: 100vh;
+
+  .mat-tree {
+    background: transparent;
+  }
+
+  mat-tree {
+    overflow: scroll;
+  }
+
+  .talkImg{
+    margin-right:2%;
+  }
+
+  .mat-sidenav-container {
+    background: $color_w;
+    width: 25%;
+  }
+
+  .mat-sidenav-content {
+    margin: 0 !important;
+    position: absolute;
+    top: 12%;
+    left: 90%;
+    z-index: 2;
+  }
+
+  .plus {
+    display: flex;
+    align-items: center;
+    font-size: 18px !important;
+  }
+
+  li {
+    color: $color_w;
+    margin: 0 auto;
+    overflow: scroll;
+    width: 90%;
+  }
+
+  &__main {
+    height: 80%;
+  }
+
+  &__logo {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding:15px;
+
+  }
+
+
+
+  &__top {
+  }
+
+  &__container {
+    text-align: center;
+  }
+
+  &__search {
+
+    margin:0 auto;
+    margin-bottom: 5%;
+    width:90%;
+
+    &__item {
+      border-radius: 20px;
+      margin: auto;
+      padding: 2%;
+      display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+    }
+  }
+
+  &__topic {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+      align-items: center;
+      font-weight: bold;
+      color: $color_w;
+      display: flex;
+
+      &__left{
+        width:90%;
+      }
+
+      &__right{
+        width:10%;
+      }
+    }
+  }
+
+  //todo height部分修正
+  &__matTree {
+    height: 72vh;
+
+    &__items {
+
+      ol {
+        max-height: 30vh;
+        overflow: scroll;
+      }
+    }
+  }
+
+  &__account {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);;
+    bottom: 0;
+    display: flex;
+    height: 8vh;
+    position: absolute;
+    width: 100%;
+
+    &__circle {
+      background: springgreen;
+      border-radius: 50%;
+      display: inline-block;
+      height: 5px;
+      line-height: 5px;
+      margin-left: 5%;
+      width: 5px;
+    }
+
+    &__items {
+      align-items: center;
+      display: flex;
+      margin: 0 auto;
+      width: 90%;
+
+      &__container {
+        padding: 3%
+      }
+    }
+
+    &__img {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+
+    &__info {
+
+      &__name {
+        align-items: center;
+        color: $color_w;
+        display: flex;
+        font-size: $font-size-m;
+        font-weight: bold;
+      }
+
+      &__company {
+        color: $color_w;
+        font-size: $font-size-ss
+      }
+
+    }
+
+
+  }
+
+}
+
+mat-sidenav-content {
+  position: relative !important;
+  z-index: 3 !important;
+}

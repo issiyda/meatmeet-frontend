@@ -1,0 +1,220 @@
+.l-header {
+
+    align-items: center;
+    background: $color_base;
+    display: flex;
+    height: $header-height;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top:0;
+    z-index: 3;
+
+    &__left {
+
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        left: 5%;
+
+        img {
+
+            @include mq() {
+                width: 80%;
+            }
+
+
+        }
+    }
+
+    &__right {
+        width: 60%;
+        position: relative;
+        right: 5%;
+
+        &__before {
+
+            padding-left: 48%;
+
+            @include mq() {
+                padding-left: 20%;
+            }
+
+        }
+
+        &__after {
+            position: relative;
+
+            @include mq() {
+                margin-left: 30%;
+                margin-top: 4%;
+            }
+
+            &__cursor{
+                cursor: pointer;
+            }
+
+            &__menu{
+                display: none;
+
+                @include mq(){
+                    display: inline;
+                }
+            }
+        }
+
+
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: flex-end;
+            width: 100%;
+
+            @include mq() {
+                justify-content: space-evenly;
+            }
+
+            li {
+                margin-right: 2%;
+
+                // 画像
+                img {
+                    width: 18px;
+                    height: 14px;
+
+                    @include mq() {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                a {
+                    font-size: 1em;
+                    font-weight: bold;
+
+                    @include mq() {
+                        font-size: 0.8em;
+                     }
+
+                    span {
+
+                        @include mq() {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__button{
+        transition: 0.3s;
+        &:hover{
+            background: $color_w !important;
+            @include mq(){
+                background: $color_base !important;
+            }
+        }
+    }
+
+
+    // aタグ
+    // before
+    a.registar {
+        color: #000000;
+        background: $color_w;
+        border-radius: 30px;
+        padding: 15px 20px;
+        line-height: 100px;
+
+        @include mq() {
+            padding: 15% 8px;
+        }
+    }
+
+    a.login {
+        background: $color_base;
+        color: #000000;
+        padding: 15px 10px;
+        border-radius: 30px;
+        border: 1px solid $color_border;
+        line-height: 100px;
+
+        @include mq() {
+            padding: 12% 3px;
+        }
+
+        img {
+
+            @include mq() {
+                width: 18px;
+                height: 14px;
+            }
+        }
+    }
+
+
+    // after
+    a.message {
+        background: $color_base;
+        padding: 15px 20px;
+        border-radius: 30px;
+        border: 1px solid $color_border;
+        line-height: 100px;
+        color: #000000;
+
+        @include mq() {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+    }
+
+    a.search {
+        padding: 15px 20px;
+        background: $color_base;
+        border-radius: 30px;
+        border: 1px solid $color_border;
+        line-height: 100px;
+        color: #000000;
+
+        @include mq() {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+    }
+
+
+    // ユーザーアイコン
+    .icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-top: 30%;
+        position:relative;
+
+
+        @include mq() {
+            width: 40px;
+            height: 40px;
+            margin-top: 60%;
+        }
+
+    }
+}
+
+a.logout {
+    padding: 15px 10px;
+    border-radius: 30px;
+    background: #333333;
+    color: $color_w;
+    line-height: 100px;
+
+    @include mq() {
+        display: none;
+    }
+}
+

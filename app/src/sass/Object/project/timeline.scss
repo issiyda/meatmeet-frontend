@@ -1,0 +1,14 @@
+.timeLine{
+text-align: center;
+
+  &__requriements{
+    display: flex;
+  }
+  &__requirement{
+    align-items: center;
+    display:flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 50%;
+  }
+}

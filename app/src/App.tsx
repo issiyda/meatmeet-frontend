@@ -1,54 +1,35 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {createContext, useEffect, useReducer, useState} from 'react';
 import {BrowserRouter as Router, Link, Route, useParams} from 'react-router-dom';
 
 // ComponentのImport
 import Home from './components/home/Home'
 
-import './App.css';
+import './sass/Object/project/app.scss';
 import TimeLine from "./components/home/timeLine";
 import Requirement from "./components/requirement/Requirement";
 import RequirementDetail from "./components/requirement-detail/RequirementDetail";
+import { StoreProvider } from './Store'
+import { Store } from './Store'
 
-const requirementInfo =
-    [
-        {
-            'name': '石田',
-            'title': '新宿で焼肉会',
-            'place': '新宿'
-        },
-        {
-            'name': '石田',
-            'title': '新宿で焼肉会',
-            'place': '新宿'
-        },
-        {
-            'name': '石田',
-            'title': '新宿で焼肉会',
-            'place': '新宿'
-        }
-    ]
-
-export const RequirementContext = createContext(requirementInfo)
-
+// CSS
+import './sass/Foundation/foundations.scss'
 
 function App() {
-    const AppName = 'MeatMeet？'
+    const AppName = 'Shall We Meat？'
 
     // Hooks
-    const [requirement, setRequirement] = useState(requirementInfo)
 
-    const [count, setCount] = useState(0)
 
     console.log('render start')
 
     useEffect(() => {
         console.log('render finished')
-    },[count])
+    },[])
 
     return (
-        <>
+        <StoreProvider>
             <div className="App">
-                <RequirementContext.Provider value={requirement}>
+                {/*<RequirementContext.Provider value={requirement}>*/}
                 <Router>
                     <header className="App-header">
                         <h2>{AppName}</h2>
@@ -58,13 +39,10 @@ function App() {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/requirement" component={Requirement}/>
                     <Route exact path="/requirement/detail/:id" component={RequirementDetail}/>
-
-                    <button onClick={():void => setCount(count => count+1)}>+1</button>
-                    {count}
                 </Router>
-                </RequirementContext.Provider>
+                {/*</RequirementContext.Provider>*/}
             </div>
-        </>
+        </StoreProvider>
     );
 }
 

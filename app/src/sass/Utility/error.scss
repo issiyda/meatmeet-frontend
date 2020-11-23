@@ -1,0 +1,19 @@
+.u-error {
+    border-color: $color_errorBorder !important;
+    background: $color_errorBackground !important;
+
+    &__position{
+        text-align: left;
+        width: 70%;
+
+        @include mq() {
+            width: 90%;
+        }
+    }
+}
+
+.u-input__error {
+    border-color: #c20c33 !important;
+}
+
+
